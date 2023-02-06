@@ -1,6 +1,9 @@
 import { TagPairs } from "./TagPairs.js";
 
-const REQUIRED_TAG_NAMES = [
+/**
+ * List of tags required for a valid PGN.
+ */
+export const REQUIRED_TAG_NAMES = [
     "Event",
     "Site",
     "Date",
@@ -10,6 +13,15 @@ const REQUIRED_TAG_NAMES = [
     "Result"
 ]
 
+/**
+ * Extracts PGN tags from a PGN in string form and maps them to a `TagPairs` type. 
+ * Non essential tags can be found in a map in the `opt` property of the`TagPairs` object.
+ * 
+ * Upon failiure, the function returns an `undefined`.
+ * 
+ * @param {string} pgn - The PGN text
+ * @returns {TagPairs | undefined} Returns `TagPairs` if the extraction of tags was successful and `undefined` if it wasn't.
+ */
 export function getTagPairs(pgn: string): TagPairs | undefined {
     const lines = pgn.split('\n');
     const tagLines: string[] = [];

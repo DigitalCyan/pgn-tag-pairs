@@ -8,7 +8,7 @@ const INVALID_PGN = '[Eent "Live Chess"]\n[Site "Chess.com"]\n[Date "2023.02.03"
 
 describe('The get getTagPairs function should:', () => {
     it('Properly parse valid PGNs', () => {
-        const tags = getTagPairs(VALID_PGN);
+        const tags = getTagPairs(VALID_PGN)!;
         assert.equal(tags.event, "Live Chess");
         assert.equal(tags.site, "Chess.com");
         assert.equal(tags.date, "2023.02.03");
@@ -23,7 +23,7 @@ describe('The get getTagPairs function should:', () => {
     });
 
     it('Properly parse optional tags', () => {
-        const tags = getTagPairs(VALID_PGN);
+        const tags = getTagPairs(VALID_PGN)!;
         assert.equal(tags.opt.get(CommonOptionalTags.TimeControl), 600);
     })
 })
