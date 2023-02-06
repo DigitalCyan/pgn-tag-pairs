@@ -21,5 +21,10 @@
   "dependencies": {},
   "author": "DigitalCyan",
   "license": "MIT",
+  "keywords": [
+    "chess",
+    "pgn",
+    "parsing"
+  ],
   "private": false
 }
